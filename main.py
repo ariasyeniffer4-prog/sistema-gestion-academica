@@ -54,13 +54,16 @@ def main():
         ),
     ]
 
-    # Cambio válido y tres intentos inválidos exigidos como demostración.
+    # Cambios válidos y valores inválidos rechazados por las validaciones.
     personas[1].cambiar_correo_electronico("luis.gomez@ejemplo.edu.co")
     personas[0].cambiar_correo_electronico("")
     programa.cambiar_numero_semestres(9)
     programa.cambiar_numero_semestres(0)
     asignatura.cambiar_creditos(4)
     asignatura.cambiar_creditos(0)
+    personas[1].cambiar_semestre(0)
+    personas[1].cambiar_promedio_acumulado(5.5)
+    personas[2].cambiar_horas_semanales(0)
 
     # Un solo ciclo y las mismas llamadas para todos: el tipo real determina
     # qué implementación de cada método se ejecuta (polimorfismo).

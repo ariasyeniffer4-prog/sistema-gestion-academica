@@ -34,14 +34,17 @@ python main.py
 con un único ciclo y llama a ambos métodos sin identificar previamente el tipo.
 Los datos se encapsulan y se consultan mediante métodos. Las actualizaciones
 del correo, número de semestres y créditos aplican las validaciones descritas
-en la actividad. El programa principal muestra modificaciones válidas e
-intentos de asignar valores inválidos.
+en la actividad. También se valida que el semestre del estudiante y las horas
+semanales sean mayores que cero, y que el promedio esté entre 0 y 5. Estas
+tres reglas adicionales se incluyen como validaciones razonables para los
+datos académicos.
 
 ## Verificación manual
 
 Al ejecutar `python main.py`, se presentan un programa académico, una
-asignatura, seis personas (dos de cada tipo), sus actividades principales y
-mensajes para tres intentos inválidos. No se requieren dependencias externas.
+asignatura, seis personas (dos de cada tipo), sus actividades principales,
+cambios válidos y mensajes para seis intentos inválidos. No se requieren
+dependencias externas.
 
 ## Uso de inteligencia artificial
 
@@ -50,11 +53,9 @@ requerimientos, proponer la estructura inicial y explicar decisiones de
 diseño. Los integrantes deben revisar, comprender, adaptar y poder justificar
 todo el código entregado, de acuerdo con la actividad.
 
-## Antes de entregar
+## Repositorio y versión de entrega
 
-- Completar los nombres reales de los integrantes.
-- Confirmar con el docente las reglas adicionales usadas para promedio,
-  semestre del estudiante y horas semanales, ya que la actividad no fija sus
-  rangos.
-- Subir el proyecto a GitHub y comprobar que cada integrante tenga al menos
-  un commit sustantivo. Agregar el enlace real del repositorio al entregar.
+Repositorio: [sistema-gestion-academica](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica).
+
+La versión marcada para la actividad está en la etiqueta `actividad-1-entrega`.
+Las mejoras posteriores se encuentran en la rama `main`.
