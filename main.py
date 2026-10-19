@@ -11,24 +11,51 @@ from src.modelos import (
 
 def main():
     programa = ProgramaAcademico(
-        "ING-SIS", "Ingeniería de Sistemas", "Ciencias e Ingenierías", 10
+        "115988",
+        "Ingeniería en Análisis de Datos",
+        "Facultad de Ciencias e Ingenierías",
+        9,
     )
-    asignatura = Asignatura("POO-101", "Programación Orientada a Objetos", 3, programa)
+    asignatura = Asignatura(
+        "POO-101", "Programación Orientada a Objetos", 3, programa
+    )
     print(programa.mostrar_informacion())
     print()
     print(asignatura.mostrar_informacion())
 
     personas = [
-        Estudiante("1001", "Ana Pérez", "ana@ejemplo.edu.co", "E001", programa, 3, 4.2),
-        Estudiante("1002", "Luis Gómez", "luis@ejemplo.edu.co", "E002", programa, 5, 3.9),
-        Docente("2001", "Marta Ruiz", "marta@ejemplo.edu.co", "D001", "Ciencias e Ingenierías", "Tiempo completo", 40),
-        Docente("2002", "Carlos Díaz", "carlos@ejemplo.edu.co", "D002", "Ciencias e Ingenierías", "Cátedra", 12),
-        Administrativo("3001", "Sofía León", "sofia@ejemplo.edu.co", "A001", "Registro Académico", "Coordinadora", "Diurna"),
-        Administrativo("3002", "Julián Mora", "julian@ejemplo.edu.co", "A002", "Biblioteca", "Auxiliar", "Mixta"),
+        Estudiante(
+            "1060655290",
+            "Yeniffer Fernanda Arias Ordoñez",
+            "ariasyeniffer4@gmail.com",
+            "104202618344",
+            programa,
+            2,
+            4.78,
+        ),
+        Estudiante(
+            "1002", "Luis Gómez", "luis@ejemplo.edu.co", "E002", programa, 5, 3.9
+        ),
+        Docente(
+            "2001", "Marta Ruiz", "marta@ejemplo.edu.co", "D001",
+            "Ciencias e Ingenierías", "Tiempo completo", 40
+        ),
+        Docente(
+            "2002", "Carlos Díaz", "carlos@ejemplo.edu.co", "D002",
+            "Ciencias e Ingenierías", "Cátedra", 12
+        ),
+        Administrativo(
+            "3001", "Sofía León", "sofia@ejemplo.edu.co", "A001",
+            "Registro Académico", "Coordinadora", "Diurna"
+        ),
+        Administrativo(
+            "3002", "Julián Mora", "julian@ejemplo.edu.co", "A002",
+            "Biblioteca", "Auxiliar", "Mixta"
+        ),
     ]
 
     # Cambio válido y tres intentos inválidos exigidos como demostración.
-    personas[0].cambiar_correo_electronico("ana.perez@ejemplo.edu.co")
+    personas[1].cambiar_correo_electronico("luis.gomez@ejemplo.edu.co")
     personas[0].cambiar_correo_electronico("")
     programa.cambiar_numero_semestres(9)
     programa.cambiar_numero_semestres(0)
