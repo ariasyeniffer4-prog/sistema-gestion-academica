@@ -23,6 +23,8 @@ académicos con matrícula y horario propio.
   por la autora.
 - `evidencias/salida_unittest.txt`: transcripción de la suite automatizada
   ejecutada por la autora.
+- `.github/workflows/validacion-python.yml`: validación independiente en GitHub
+  Actions al actualizar `main` o abrir un pull request.
 
 ## Ejecución
 
@@ -77,6 +79,11 @@ composición visible del horario, estado de matrícula después de operaciones,
 excepciones y búsquedas. La autora ejecutó `py -m unittest discover -v` en
 Windows: las cinco pruebas pasaron (`Ran 5 tests`, `OK`). La salida está en
 `evidencias/salida_unittest.txt`. No se requieren dependencias externas.
+
+El workflow `Validación del sistema académico` ejecuta también `main.py` y la
+suite en un runner de GitHub Actions cuando se publique un nuevo commit en
+`main`. El resultado independiente se consultará en la pestaña **Actions** del
+repositorio después de publicar este workflow.
 
 ## Uso de inteligencia artificial
 

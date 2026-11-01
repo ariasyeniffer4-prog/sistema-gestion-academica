@@ -35,12 +35,18 @@ contiene un horario propio.
 
 ### Continuidad con la Actividad Colaborativa 1
 
-Se comparó el código de la etiqueta `actividad-1-entrega` con esta versión. La
-versión inicial ya contenía `Persona`, `ProgramaAcademico`, `Asignatura`,
-`Estudiante`, `Docente` y `Administrativo`, junto con la lista heterogénea de
-personas y el recorrido polimórfico en `main.py`. La versión actual conserva
-esas clases, sus datos y responsabilidades, y mantiene las llamadas
-polimórficas a `realizar_actividad_principal()`.
+Se comparó el código de la etiqueta
+[`actividad-1-entrega`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/actividad-1-entrega)
+con la versión de
+[`main`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/main).
+La versión inicial ya contenía `Persona`, `ProgramaAcademico`, `Asignatura`,
+`Estudiante`, `Docente` y `Administrativo`. Se conservaron los datos comunes y
+los métodos de consulta y presentación de `Persona`, las entidades de
+programa y asignatura, las especializaciones de las tres clases derivadas y
+sus implementaciones de `realizar_actividad_principal()`. También se mantuvo en
+`main.py` la lista heterogénea de personas y el recorrido que llama a
+`mostrar_informacion()` y `realizar_actividad_principal()` sin identificar
+previamente el tipo concreto.
 
 La evolución cambia `Persona` de una clase concreta a una clase abstracta y
 añade `GrupoAcademico`, `Horario`, las excepciones de dominio y las búsquedas.
@@ -120,6 +126,12 @@ raíz con `py -m unittest discover -v`. La autora ejecutó ese comando en Window
 pasaron las cinco pruebas. La salida se conserva en
 `evidencias/salida_unittest.txt`. Así queda documentado el resultado real que
 compartió, sin atribuir una ejecución independiente a este entorno.
+
+Para facilitar una reproducción independiente, el repositorio añade el
+workflow `.github/workflows/validacion-python.yml`. Al publicarse en `main`, un
+runner de GitHub ejecutará `python main.py` y `python -m unittest discover -v`.
+El resultado de esa primera ejecución debe revisarse en la pestaña **Actions**;
+no se afirma de antemano que el workflow ya haya pasado.
 
 ## Conclusiones
 

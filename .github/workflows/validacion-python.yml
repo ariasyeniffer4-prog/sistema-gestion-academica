@@ -1,0 +1,29 @@
+name: Validación del sistema académico
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v7
+
+      - name: Configurar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Ejecutar demostración principal
+        run: python main.py
+
+      - name: Ejecutar pruebas automatizadas
+        run: python -m unittest discover -v
