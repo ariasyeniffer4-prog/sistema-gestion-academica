@@ -2,10 +2,16 @@
 
 ## Evolución del Sistema de Gestión Académica
 
-**Universidad de Manizales**  
-**Facultad de Ciencias e Ingenierías**  
-**Actividad Colaborativa N.º 2**  
-**Integrante registrado en el README:** Yeniffer Fernanda Arias Ordoñez  
+**Universidad de Manizales**
+
+**Facultad de Ciencias e Ingenierías**
+
+**Actividad Colaborativa N.º 2**
+
+**Autora:** Yeniffer Fernanda Arias Ordoñez
+
+**Modalidad de trabajo:** individual
+
 **Proyecto:** sistema de gestión académica en Python
 
 ## Introducción
@@ -26,6 +32,20 @@ su relación previa. `Persona` reúne los datos compartidos; `Estudiante`,
 especializados. La nueva clase `GrupoAcademico` organiza una asignatura
 ofrecida por un docente, mantiene la lista de estudiantes matriculados y
 contiene un horario propio.
+
+### Continuidad con la Actividad Colaborativa 1
+
+Se comparó el código de la etiqueta `actividad-1-entrega` con esta versión. La
+versión inicial ya contenía `Persona`, `ProgramaAcademico`, `Asignatura`,
+`Estudiante`, `Docente` y `Administrativo`, junto con la lista heterogénea de
+personas y el recorrido polimórfico en `main.py`. La versión actual conserva
+esas clases, sus datos y responsabilidades, y mantiene las llamadas
+polimórficas a `realizar_actividad_principal()`.
+
+La evolución cambia `Persona` de una clase concreta a una clase abstracta y
+añade `GrupoAcademico`, `Horario`, las excepciones de dominio y las búsquedas.
+El tag histórico permite identificar el punto de partida sin reemplazarlo;
+`Entrega_AC2` señala la versión con esta evolución.
 
 ## Desarrollo
 
@@ -87,6 +107,11 @@ el límite de capacidad, un retiro válido, un retiro inválido y las dos
 búsquedas fallidas. Al final informa que la ejecución continuó y muestra la
 lista actual de estudiantes del primer grupo.
 
+La autora ejecutó `py main.py` en Windows y compartió la salida completa. Esta
+mostró los mensajes de las cinco situaciones excepcionales, la continuación
+del programa y las actividades principales de las seis personas. Es una
+verificación manual mediante el programa principal, no una suite automatizada.
+
 ## Conclusiones
 
 La evolución mantiene las clases principales de la Actividad 1 y extiende el
@@ -97,16 +122,14 @@ coordina los objetos que participan en una oferta y crea su `Horario` como
 parte de ella. Las excepciones separan los errores de dominio de los mensajes
 presentados por el programa principal.
 
-Antes de entregar, los integrantes deben revisar el código y poder explicar
-estas decisiones y su ejecución. El README registra únicamente a Yeniffer
-Fernanda Arias Ordoñez; si participaron más integrantes, deben agregarse sus
-nombres confirmados y cada integrante debe realizar su propio commit. Este
-documento no afirma participación ni comprensión individual que no haya sido
-confirmada.
+La autora debe poder explicar estas decisiones y la ejecución del programa.
+El trabajo se realizó individualmente y el historial de `main` registra esa
+contribución. La etiqueta `Entrega_AC2` identifica la versión corregida de la
+entrega, y la etiqueta `actividad-1-entrega` conserva la versión inicial.
 
 ## Declaración de uso de inteligencia artificial
 
 Se utilizó inteligencia artificial como apoyo para comprender los
 requerimientos, proponer cambios de código, revisar errores y redactar partes
-de esta explicación. La herramienta no sustituye la revisión del equipo; los
-integrantes deben comprender y justificar el código que presenten.
+de esta explicación. La herramienta no sustituye la revisión de la autora;
+ella debe comprender y justificar el código que presenta.

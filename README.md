@@ -1,8 +1,8 @@
 # Sistema de Gestión Académica
 
-## Integrantes
+## Integrante
 
-- Yeniffer Fernanda Arias Ordoñez
+- Yeniffer Fernanda Arias Ordoñez (trabajo individual)
 
 ## Descripción
 
@@ -17,6 +17,7 @@ académicos con matrícula y horario propio.
   `Estudiante`, `Docente`, `Administrativo`, `Horario` y `GrupoAcademico`, además
   de las excepciones y funciones de búsqueda.
 - `src/__init__.py`: inicialización del paquete de modelos.
+- `Documento_Decisiones_Diseno.md`: justificación de las decisiones de diseño.
 
 ## Ejecución
 
@@ -24,6 +25,12 @@ Desde la carpeta raíz del proyecto:
 
 ```bash
 python main.py
+```
+
+En Windows también puede ejecutarse con el lanzador de Python:
+
+```powershell
+py main.py
 ```
 
 ## Conceptos de programación orientada a objetos
@@ -47,22 +54,28 @@ con mensajes para que la demostración continúe.
 
 ## Verificación manual
 
-Al ejecutar `python main.py`, se presentan los objetos académicos y las
-personas, dos grupos, una matrícula válida y los casos excepcionales requeridos
-por la actividad. No se requieren dependencias externas.
+La autora ejecutó `py main.py` en Windows. La salida confirmó que `Persona` no
+se puede instanciar directamente, se crean dos grupos y se demuestran la
+matrícula válida, el duplicado, el límite de capacidad, ambos retiros y las dos
+búsquedas fallidas. El programa continuó hasta mostrar las actividades
+principales polimórficas. Esta verificación es una demostración manual en el
+archivo principal; no se presenta como una suite automatizada. No se requieren
+dependencias externas.
 
 ## Uso de inteligencia artificial
 
 Se utilizó inteligencia artificial como apoyo para comprender los
-requerimientos, proponer cambios, revisar errores y redactar explicaciones.
-El equipo debe revisar y poder justificar el código y las decisiones antes de
-la entrega.
+requerimientos, proponer cambios, revisar errores y redactar explicaciones. La
+autora debe revisar y poder justificar el código y las decisiones presentadas.
 
 ## Repositorio y versión de entrega
 
 Repositorio: [sistema-gestion-academica](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica).
 
 La versión de la Actividad 1 permanece identificable en la etiqueta
-`actividad-1-entrega`. La etiqueta requerida `Entrega_AC2` y los commits de
-participación de todos los integrantes deben registrarse para la entrega final;
-no se han creado en esta actualización local.
+[`actividad-1-entrega`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/actividad-1-entrega).
+La entrega de la Actividad 2 está identificada por
+[`Entrega_AC2`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/Entrega_AC2),
+que identifica la versión corregida de la entrega. El proyecto fue desarrollado
+individualmente por Yeniffer Fernanda Arias Ordoñez, y el historial de `main`
+registra su contribución.
