@@ -81,9 +81,16 @@ Windows: las cinco pruebas pasaron (`Ran 5 tests`, `OK`). La salida está en
 `evidencias/salida_unittest.txt`. No se requieren dependencias externas.
 
 El workflow `Validación del sistema académico` ejecuta también `main.py` y la
-suite en un runner de GitHub Actions cuando se publique un nuevo commit en
-`main`. El resultado independiente se consultará en la pestaña **Actions** del
-repositorio después de publicar este workflow.
+suite en un runner de GitHub Actions. En el commit `cf7db11`, las dos
+ejecuciones publicadas terminaron exitosamente:
+
+- [Validación del sistema académico](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/actions/runs/41355959576)
+- [Python application](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/actions/runs/41355959469)
+
+La etiqueta [`Entrega_AC2`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/Entrega_AC2)
+identifica la versión de entrega, y
+[`actividad-1-entrega`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/actividad-1-entrega)
+preserva la versión de AC1.
 
 ## Uso de inteligencia artificial
 

@@ -128,10 +128,14 @@ pasaron las cinco pruebas. La salida se conserva en
 compartió, sin atribuir una ejecución independiente a este entorno.
 
 Para facilitar una reproducción independiente, el repositorio añade el
-workflow `.github/workflows/validacion-python.yml`. Al publicarse en `main`, un
-runner de GitHub ejecutará `python main.py` y `python -m unittest discover -v`.
-El resultado de esa primera ejecución debe revisarse en la pestaña **Actions**;
-no se afirma de antemano que el workflow ya haya pasado.
+workflow `.github/workflows/validacion-python.yml`, que ejecuta `python main.py`
+y `python -m unittest discover -v` en GitHub Actions. En el commit `cf7db11`,
+las ejecuciones de [Validación del sistema académico](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/actions/runs/41355959576)
+y [Python application](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/actions/runs/41355959469)
+terminaron exitosamente. El tag
+[`Entrega_AC2`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/Entrega_AC2)
+identifica la entrega; [`actividad-1-entrega`](https://github.com/ariasyeniffer4-prog/sistema-gestion-academica/tree/actividad-1-entrega)
+mantiene identificable la versión anterior.
 
 ## Conclusiones
 
