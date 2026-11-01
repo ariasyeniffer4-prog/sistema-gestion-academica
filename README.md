@@ -18,6 +18,11 @@ académicos con matrícula y horario propio.
   de las excepciones y funciones de búsqueda.
 - `src/__init__.py`: inicialización del paquete de modelos.
 - `Documento_Decisiones_Diseno.md`: justificación de las decisiones de diseño.
+- `test_modelos.py`: pruebas automatizadas con la biblioteca estándar `unittest`.
+- `evidencias/salida_py_main.txt`: transcripción de la ejecución manual compartida
+  por la autora.
+- `evidencias/salida_unittest.txt`: transcripción de la suite automatizada
+  ejecutada por la autora.
 
 ## Ejecución
 
@@ -31,6 +36,12 @@ En Windows también puede ejecutarse con el lanzador de Python:
 
 ```powershell
 py main.py
+```
+
+Para ejecutar las pruebas automatizadas desde la raíz del proyecto:
+
+```powershell
+py -m unittest discover -v
 ```
 
 ## Conceptos de programación orientada a objetos
@@ -54,13 +65,18 @@ con mensajes para que la demostración continúe.
 
 ## Verificación manual
 
-La autora ejecutó `py main.py` en Windows. La salida confirmó que `Persona` no
-se puede instanciar directamente, se crean dos grupos y se demuestran la
-matrícula válida, el duplicado, el límite de capacidad, ambos retiros y las dos
-búsquedas fallidas. El programa continuó hasta mostrar las actividades
-principales polimórficas. Esta verificación es una demostración manual en el
-archivo principal; no se presenta como una suite automatizada. No se requieren
-dependencias externas.
+La autora ejecutó `py main.py` en Windows. La transcripción compartida está en
+`evidencias/salida_py_main.txt`; muestra que `Persona` no se puede instanciar
+directamente, los dos grupos, las matrículas, retiros y búsquedas solicitados,
+la continuidad tras las excepciones y las actividades principales
+polimórficas. Es evidencia de ejecución reportada por la autora, no de una
+reproducción independiente.
+
+`test_modelos.py` añade pruebas repetibles para abstracción y polimorfismo,
+composición visible del horario, estado de matrícula después de operaciones,
+excepciones y búsquedas. La autora ejecutó `py -m unittest discover -v` en
+Windows: las cinco pruebas pasaron (`Ran 5 tests`, `OK`). La salida está en
+`evidencias/salida_unittest.txt`. No se requieren dependencias externas.
 
 ## Uso de inteligencia artificial
 

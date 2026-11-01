@@ -1,0 +1,112 @@
+Evidencia de ejecución manual compartida por la autora
+Comando: py main.py
+Entorno reportado: Windows PowerShell
+
+La transcripción siguiente se preparó a partir de la salida pegada por la
+autora en el chat. No es un archivo redirigido ni una captura de pantalla y no
+representa una ejecución independiente realizada en este entorno.
+
+Intento de crear Persona directamente:
+No se puede instanciar Persona: Can't instantiate abstract class Persona without an implementation for abstract method 'realizar_actividad_principal'
+Programa: Ingeniería en Análisis de Datos (115988)
+Facultad: Facultad de Ciencias e Ingenierías
+Número de semestres: 9
+
+Asignatura: Programación Orientada a Objetos (POO-101)
+Créditos: 3
+Programa: Ingeniería en Análisis de Datos
+
+Grupos académicos creados:
+Grupo: G-POO-01
+Asignatura: Programación Orientada a Objetos (POO-101)
+Créditos: 3
+Programa: Ingeniería en Análisis de Datos
+Docente: Marta Ruiz
+Cupo: 0/2
+Horario: Lunes, 08:00 a 10:00 - Salón B-201
+Grupo: G-POO-02
+Asignatura: Programación Orientada a Objetos (POO-101)
+Créditos: 3
+Programa: Ingeniería en Análisis de Datos
+Docente: Carlos Díaz
+Cupo: 0/3
+Horario: Miércoles, 10:00 a 12:00 - Salón B-202
+
+Matrícula válida realizada en G-POO-01.
+
+Matrícula duplicada controlada: El estudiante 104202618344 ya está matriculado en el grupo G-POO-01.
+Capacidad máxima controlada: El grupo G-POO-01 alcanzó su capacidad máxima.
+Retiro válido realizado.
+Retiro de estudiante no matriculado controlado: El estudiante E-NO-EXISTE no está matriculado en el grupo G-POO-01.
+Búsqueda de asignatura controlada: No existe una asignatura con código NO-EXISTE.
+Búsqueda de programa controlada: No existe un programa académico con código NO-EXISTE.
+
+El programa continúa después de los casos excepcionales.
+Estudiantes actuales en G-POO-01:
+104202618344 - Yeniffer Fernanda Arias Ordoñez
+Error: el correo electrónico no puede estar vacío.
+Error: el número de semestres debe ser un entero mayor que cero.
+Error: el número de créditos debe ser un entero mayor que cero.
+Error: el semestre debe ser un entero mayor que cero.
+Error: el promedio debe estar entre 0 y 5.
+Error: las horas semanales deben ser mayores que cero.
+
+--------------------------------------------------
+Identificación: 1060655290
+Nombre: Yeniffer Fernanda Arias Ordoñez
+Correo electrónico: ariasyeniffer4@gmail.com
+Código estudiantil: 104202618344
+Programa: Ingeniería en Análisis de Datos
+Semestre: 2
+Promedio acumulado: 4.78
+Cursa Ingeniería en Análisis de Datos en el semestre 2.
+
+--------------------------------------------------
+Identificación: 1002
+Nombre: Luis Gómez
+Correo electrónico: luis.gomez@ejemplo.edu.co
+Código estudiantil: E002
+Programa: Ingeniería en Análisis de Datos
+Semestre: 5
+Promedio acumulado: 3.9
+Cursa Ingeniería en Análisis de Datos en el semestre 5.
+
+--------------------------------------------------
+Identificación: 2001
+Nombre: Marta Ruiz
+Correo electrónico: marta@ejemplo.edu.co
+Número de empleado: D001
+Facultad: Ciencias e Ingenierías
+Tipo de contratación: Tiempo completo
+Horas semanales: 40
+Orienta clases en la facultad de Ciencias e Ingenierías.
+
+--------------------------------------------------
+Identificación: 2002
+Nombre: Carlos Díaz
+Correo electrónico: carlos@ejemplo.edu.co
+Número de empleado: D002
+Facultad: Ciencias e Ingenierías
+Tipo de contratación: Cátedra
+Horas semanales: 12
+Orienta clases en la facultad de Ciencias e Ingenierías.
+
+--------------------------------------------------
+Identificación: 3001
+Nombre: Sofía León
+Correo electrónico: sofia@ejemplo.edu.co
+Número de empleado: A001
+Dependencia: Registro Académico
+Cargo: Coordinadora
+Jornada: Diurna
+Desempeña el cargo de Coordinadora en Registro Académico.
+
+--------------------------------------------------
+Identificación: 3002
+Nombre: Julián Mora
+Correo electrónico: julian@ejemplo.edu.co
+Número de empleado: A002
+Dependencia: Biblioteca
+Cargo: Auxiliar
+Jornada: Mixta
+Desempeña el cargo de Auxiliar en Biblioteca.

@@ -107,10 +107,19 @@ el límite de capacidad, un retiro válido, un retiro inválido y las dos
 búsquedas fallidas. Al final informa que la ejecución continuó y muestra la
 lista actual de estudiantes del primer grupo.
 
-La autora ejecutó `py main.py` en Windows y compartió la salida completa. Esta
-mostró los mensajes de las cinco situaciones excepcionales, la continuación
-del programa y las actividades principales de las seis personas. Es una
-verificación manual mediante el programa principal, no una suite automatizada.
+La autora ejecutó `py main.py` en Windows y compartió la salida, que se conserva
+como transcripción en `evidencias/salida_py_main.txt`. Allí se observan los
+mensajes de las cinco situaciones excepcionales, la continuación del programa
+y las actividades principales de las seis personas. La transcripción documenta
+la ejecución reportada por la autora; no es una reproducción independiente.
+
+Además, `test_modelos.py` contiene pruebas automatizadas con `unittest` para
+comprobar la abstracción, el polimorfismo, la información del grupo, el estado
+de las matrículas tras cada operación y las búsquedas. Se ejecutan desde la
+raíz con `py -m unittest discover -v`. La autora ejecutó ese comando en Windows:
+pasaron las cinco pruebas. La salida se conserva en
+`evidencias/salida_unittest.txt`. Así queda documentado el resultado real que
+compartió, sin atribuir una ejecución independiente a este entorno.
 
 ## Conclusiones
 

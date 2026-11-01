@@ -1,0 +1,17 @@
+Evidencia de pruebas automatizadas compartida por la autora
+Comando: py -m unittest discover -v
+Entorno reportado: Windows PowerShell
+
+La transcripción siguiente se preparó a partir de la salida pegada por la
+autora en el chat. No es un archivo redirigido ni una captura de pantalla.
+
+test_busquedas_devuelven_objetos_y_lanzan_error_si_no_existen (test_modelos.SistemaAcademicoTests.test_busquedas_devuelven_objetos_y_lanzan_error_si_no_existen) ... ok
+test_grupo_muestra_asignatura_docente_y_horario (test_modelos.SistemaAcademicoTests.test_grupo_muestra_asignatura_docente_y_horario) ... ok
+test_matricula_valida_y_rechaza_duplicado_y_sobrecupo (test_modelos.SistemaAcademicoTests.test_matricula_valida_y_rechaza_duplicado_y_sobrecupo) ... ok
+test_persona_es_abstracta_y_subclases_sobrescriben_actividad (test_modelos.SistemaAcademicoTests.test_persona_es_abstracta_y_subclases_sobrescriben_actividad) ... ok
+test_retiro_valido_y_rechazo_de_estudiante_ausente (test_modelos.SistemaAcademicoTests.test_retiro_valido_y_rechazo_de_estudiante_ausente) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK
