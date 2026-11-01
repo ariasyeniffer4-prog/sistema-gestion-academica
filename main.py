@@ -2,14 +2,30 @@
 
 from src.modelos import (
     Administrativo,
+    AsignaturaNoEncontradaError,
     Asignatura,
+    CapacidadGrupoCompletaError,
     Docente,
     Estudiante,
+    EstudianteNoMatriculadoError,
+    EstudianteYaMatriculadoError,
+    GrupoAcademico,
+    ProgramaNoEncontradoError,
     ProgramaAcademico,
+    buscar_asignatura,
+    buscar_programa,
 )
 
 
 def main():
+    print("Intento de crear Persona directamente:")
+    try:
+        # Persona es abstracta; este intento debe ser rechazado por Python.
+        from src.modelos import Persona
+        Persona("0", "Persona genérica", "persona@ejemplo.edu.co")
+    except TypeError as error:
+        print(f"No se puede instanciar Persona: {error}")
+
     programa = ProgramaAcademico(
         "115988",
         "Ingeniería en Análisis de Datos",
@@ -53,6 +69,68 @@ def main():
             "Biblioteca", "Auxiliar", "Mixta"
         ),
     ]
+
+    programas = [programa]
+    asignaturas = [asignatura]
+    docente = personas[2]
+    estudiante_uno, estudiante_dos = personas[0], personas[1]
+    estudiante_tres = Estudiante(
+        "1003", "Ana Pérez", "ana@ejemplo.edu.co", "E003", programa, 3, 4.2
+    )
+    grupo_uno = GrupoAcademico(
+        "G-POO-01", asignatura, docente, 2,
+        "Lunes", "08:00", "10:00", "B-201"
+    )
+    grupo_dos = GrupoAcademico(
+        "G-POO-02", asignatura, personas[3], 3,
+        "Miércoles", "10:00", "12:00", "B-202"
+    )
+    print("\nGrupos académicos creados:")
+    print(grupo_uno.mostrar_informacion_grupo())
+    print(grupo_dos.mostrar_informacion_grupo())
+
+    # Cada error se captura donde se demuestra para que el flujo continúe.
+    try:
+        grupo_uno.matricular_estudiante(estudiante_uno)
+        print("\nMatrícula válida realizada en G-POO-01.")
+    except (EstudianteYaMatriculadoError, CapacidadGrupoCompletaError) as error:
+        print(f"No fue posible matricular: {error}")
+
+    try:
+        grupo_uno.matricular_estudiante(estudiante_uno)
+    except EstudianteYaMatriculadoError as error:
+        print(f"\nMatrícula duplicada controlada: {error}")
+
+    grupo_uno.matricular_estudiante(estudiante_dos)
+    try:
+        grupo_uno.matricular_estudiante(estudiante_tres)
+    except CapacidadGrupoCompletaError as error:
+        print(f"Capacidad máxima controlada: {error}")
+
+    try:
+        grupo_uno.retirar_estudiante(estudiante_dos.obtener_codigo_estudiantil())
+        print("Retiro válido realizado.")
+    except EstudianteNoMatriculadoError as error:
+        print(f"No fue posible retirar: {error}")
+
+    try:
+        grupo_uno.retirar_estudiante("E-NO-EXISTE")
+    except EstudianteNoMatriculadoError as error:
+        print(f"Retiro de estudiante no matriculado controlado: {error}")
+
+    try:
+        buscar_asignatura(asignaturas, "NO-EXISTE")
+    except AsignaturaNoEncontradaError as error:
+        print(f"Búsqueda de asignatura controlada: {error}")
+
+    try:
+        buscar_programa(programas, "NO-EXISTE")
+    except ProgramaNoEncontradoError as error:
+        print(f"Búsqueda de programa controlada: {error}")
+
+    print("\nEl programa continúa después de los casos excepcionales.")
+    print("Estudiantes actuales en G-POO-01:")
+    print(grupo_uno.mostrar_estudiantes())
 
     # Cambios válidos y valores inválidos rechazados por las validaciones.
     personas[1].cambiar_correo_electronico("luis.gomez@ejemplo.edu.co")

@@ -1,7 +1,29 @@
 """Modelos iniciales del Sistema de Gestión Académica."""
 
+from abc import ABC, abstractmethod
 
-class Persona:
+
+class EstudianteYaMatriculadoError(Exception):
+    """Se intenta inscribir en el mismo grupo a un estudiante matriculado."""
+
+
+class CapacidadGrupoCompletaError(Exception):
+    """El grupo no tiene cupos disponibles."""
+
+
+class EstudianteNoMatriculadoError(Exception):
+    """Se intenta retirar a un estudiante que no pertenece al grupo."""
+
+
+class AsignaturaNoEncontradaError(Exception):
+    """No existe la asignatura solicitada."""
+
+
+class ProgramaNoEncontradoError(Exception):
+    """No existe el programa académico solicitado."""
+
+
+class Persona(ABC):
     """Información común de una persona vinculada con la universidad."""
 
     def __init__(self, identificacion, nombre, correo_electronico):
@@ -38,8 +60,10 @@ class Persona:
             f"Correo electrónico: {self.__correo_electronico}"
         )
 
+    @abstractmethod
     def realizar_actividad_principal(self):
-        return "La persona realiza sus actividades en la universidad."
+        """Describe la actividad propia de cada tipo de persona."""
+        raise NotImplementedError
 
 
 class ProgramaAcademico:
@@ -114,6 +138,96 @@ class Asignatura:
             f"Créditos: {self.__creditos}\n"
             f"Programa: {self.__programa_academico.obtener_nombre()}"
         )
+
+
+class Horario:
+    """Horario de reunión de un grupo académico."""
+
+    def __init__(self, dia, hora_inicio, hora_finalizacion, salon):
+        self.__dia = dia
+        self.__hora_inicio = hora_inicio
+        self.__hora_finalizacion = hora_finalizacion
+        self.__salon = salon
+
+    def mostrar_informacion(self):
+        return (
+            f"{self.__dia}, {self.__hora_inicio} a {self.__hora_finalizacion}"
+            f" - Salón {self.__salon}"
+        )
+
+
+class GrupoAcademico:
+    """Oferta de una asignatura con docente, estudiantes y horario propio."""
+
+    def __init__(self, codigo, asignatura, docente, capacidad_maxima,
+                 dia, hora_inicio, hora_finalizacion, salon):
+        if capacidad_maxima <= 0:
+            raise ValueError("La capacidad máxima debe ser mayor que cero.")
+        self.__codigo = codigo
+        self.__asignatura = asignatura
+        self.__docente = docente
+        self.__capacidad_maxima = capacidad_maxima
+        self.__estudiantes = []
+        # El grupo crea y administra su horario como parte de su propia oferta.
+        self.__horario = Horario(dia, hora_inicio, hora_finalizacion, salon)
+
+    def mostrar_informacion_grupo(self):
+        return (
+            f"Grupo: {self.__codigo}\n"
+            f"{self.__asignatura.mostrar_informacion()}\n"
+            f"Docente: {self.__docente.obtener_nombre()}\n"
+            f"Cupo: {len(self.__estudiantes)}/{self.__capacidad_maxima}\n"
+            f"Horario: {self.__horario.mostrar_informacion()}"
+        )
+
+    def matricular_estudiante(self, estudiante):
+        codigo = estudiante.obtener_codigo_estudiantil()
+        if any(e.obtener_codigo_estudiantil() == codigo for e in self.__estudiantes):
+            raise EstudianteYaMatriculadoError(
+                f"El estudiante {codigo} ya está matriculado en el grupo {self.__codigo}."
+            )
+        if len(self.__estudiantes) >= self.__capacidad_maxima:
+            raise CapacidadGrupoCompletaError(
+                f"El grupo {self.__codigo} alcanzó su capacidad máxima."
+            )
+        self.__estudiantes.append(estudiante)
+
+    def retirar_estudiante(self, codigo_estudiantil):
+        for estudiante in self.__estudiantes:
+            if estudiante.obtener_codigo_estudiantil() == codigo_estudiantil:
+                self.__estudiantes.remove(estudiante)
+                return
+        raise EstudianteNoMatriculadoError(
+            f"El estudiante {codigo_estudiantil} no está matriculado en el grupo {self.__codigo}."
+        )
+
+    def mostrar_estudiantes(self):
+        if not self.__estudiantes:
+            return "No hay estudiantes matriculados."
+        return "\n".join(
+            f"{e.obtener_codigo_estudiantil()} - {e.obtener_nombre()}"
+            for e in self.__estudiantes
+        )
+
+
+def buscar_asignatura(asignaturas, codigo):
+    """Devuelve una asignatura por código o lanza una excepción de dominio."""
+    for asignatura in asignaturas:
+        if asignatura.obtener_codigo() == codigo:
+            return asignatura
+    raise AsignaturaNoEncontradaError(
+        f"No existe una asignatura con código {codigo}."
+    )
+
+
+def buscar_programa(programas, codigo):
+    """Devuelve un programa por código o lanza una excepción de dominio."""
+    for programa in programas:
+        if programa.obtener_codigo() == codigo:
+            return programa
+    raise ProgramaNoEncontradoError(
+        f"No existe un programa académico con código {codigo}."
+    )
 
 
 class Estudiante(Persona):
